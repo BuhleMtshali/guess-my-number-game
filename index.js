@@ -9,6 +9,7 @@ let highScoreText = document.getElementById('high-score');
 let modalContainer = document.getElementById('modal');
 let closeModalBtn = document.getElementById('close-modal');
 let overlayElement = document.querySelector('.overlay');
+let currentScore = 20;
 
 
 //function for the modal popup with the rules of the game after 3 seconds
@@ -22,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
 //function for removing the modal window and the overlay
 closeModalBtn.addEventListener('click', () => {
     modalContainer.classList.add('hidden');
-    overlayElement.classList.add('hidden')
+    overlayElement.classList.add('hidden');
+
 })
 
 
@@ -31,7 +33,6 @@ checkBtn.addEventListener('click', () => {
     let number = Math.round(Math.random() * 30); //random number created each time the checkbtn is clicked
     randomNumber.textContent = number;
     let inputValue = guessedNumber.value;
-    let currentScore = 20;
 
     //looking out for too low values
     if(inputValue > 30 || inputValue < 1){
@@ -43,14 +44,20 @@ checkBtn.addEventListener('click', () => {
         updatingText.textContent = `🥳Great Guess! You get A point!`;
         currentScore++
         scoreUpdate.textContent = currentScore;
+        document.querySelector('body').classList.add('correct-guess');
+       
     } else if (inputValue > number){
         updatingText.textContent = `Oops! Too high, try again!`;
         currentScore--
         scoreUpdate.textContent = currentScore;
+        document.querySelector('body').classList.add('wrong-guess');
+         
     } else if(inputValue < number){
         updatingText.textContent = `Too low mate!`;
         currentScore--
         scoreUpdate.textContent = currentScore;
+        document.querySelector('body').classList.add('wrong-guess');
+         
     }
 
 
@@ -58,4 +65,9 @@ checkBtn.addEventListener('click', () => {
     }
     
     
+})
+
+//function for the again button;
+document.getElementById('again-btn').addEventListener('click', () => {
+    location.reload()
 })
