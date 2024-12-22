@@ -9,3 +9,11 @@ let highScoreText = document.getElementById('high-score');
 let modalContainer = document.getElementById('modal');
 let closeModalBtn = document.getElementById('close-modal');
 let overlayElement = document.querySelector('.overlay');
+
+
+//function for the modal popup with the rules of the game after 3 seconds
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+     modalContainer.classList.remove('hidden')
+    }, 3000)
+})
