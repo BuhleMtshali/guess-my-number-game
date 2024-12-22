@@ -15,5 +15,6 @@ let overlayElement = document.querySelector('.overlay');
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
      modalContainer.classList.remove('hidden')
+     overlayElement.classList.remove('hidden')
     }, 3000)
 })
