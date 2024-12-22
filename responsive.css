@@ -1,0 +1,36 @@
+@media screen and (max-width: 768px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .heading{
+        font-size: 1.5rem;
+        line-height: 1.6;
+    }
+    .again-btn{
+        padding: 3px 10px;
+        font-size: 0.9rem;
+    }
+    .rule-text{
+        line-height: 1.6;
+    }
+    .bottom-part{
+        flex-direction: column;
+    }
+    .left-bottom{
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+
+    .right-bottom{
+        text-align: left;
+    }
+    .number{
+        margin: 30px 0;
+    }
+    .top-part{
+        margin-bottom: 20px;
+    }
+}
