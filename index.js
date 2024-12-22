@@ -10,6 +10,7 @@ let modalContainer = document.getElementById('modal');
 let closeModalBtn = document.getElementById('close-modal');
 let overlayElement = document.querySelector('.overlay');
 let currentScore = 20;
+let highScore = 0;
 
 
 //function for the modal popup with the rules of the game after 3 seconds
@@ -43,7 +44,9 @@ checkBtn.addEventListener('click', () => {
     if(inputValue === number){
         updatingText.textContent = `🥳Great Guess! You get A point!`;
         currentScore++
+        highScore = currentScore;
         scoreUpdate.textContent = currentScore;
+        highScoreText.textContent = highScore;
         document.querySelector('body').classList.add('correct-guess');
        
     } else if (inputValue > number){
@@ -64,6 +67,7 @@ checkBtn.addEventListener('click', () => {
 
     }
     
+
     
 })
 
