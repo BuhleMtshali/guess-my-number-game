@@ -2,7 +2,7 @@
 let againBtn = document.getElementById('again-btn');
 let randomNumber = document.getElementById('random-number');
 let guessedNumber = document.getElementById('number-guessed');
-let checkBtn = document.getElementById('check-btn');
+let checkBtn = document.getElementById('check-number');
 let updatingText = document.getElementById('update-text');
 let scoreUpdate = document.getElementById('score-update');
 let highScoreText = document.getElementById('high-score');
@@ -17,4 +17,17 @@ document.addEventListener('DOMContentLoaded', () => {
      modalContainer.classList.remove('hidden')
      overlayElement.classList.remove('hidden')
     }, 3000)
+})
+
+//function for removing the modal window and the overlay
+closeModalBtn.addEventListener('click', () => {
+    modalContainer.classList.add('hidden');
+    overlayElement.classList.add('hidden')
+})
+
+
+//function for creating the random number
+checkBtn.addEventListener('click', () => {
+    randomNumber = Math.round(Math.random() * 30);
+    console.log(randomNumber)
 })
