@@ -28,6 +28,34 @@ closeModalBtn.addEventListener('click', () => {
 
 //function for creating the random number
 checkBtn.addEventListener('click', () => {
-    randomNumber = Math.round(Math.random() * 30);
-    console.log(randomNumber)
+    let number = Math.round(Math.random() * 30); //random number created each time the checkbtn is clicked
+    randomNumber.textContent = number;
+    let inputValue = guessedNumber.value;
+    let currentScore = 20;
+
+    //looking out for too low values
+    if(inputValue > 30 || inputValue < 1){
+        alert('Please enter a value within the specified values!');
+    } else{
+        //this runs if the input value is within the range
+        //creating the conditions
+    if(inputValue === number){
+        updatingText.textContent = `🥳Great Guess! You get A point!`;
+        currentScore++
+        scoreUpdate.textContent = currentScore;
+    } else if (inputValue > number){
+        updatingText.textContent = `Oops! Too high, try again!`;
+        currentScore--
+        scoreUpdate.textContent = currentScore;
+    } else if(inputValue < number){
+        updatingText.textContent = `Too low mate!`;
+        currentScore--
+        scoreUpdate.textContent = currentScore;
+    }
+
+
+
+    }
+    
+    
 })
