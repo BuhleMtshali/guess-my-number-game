@@ -2,4 +2,11 @@
     --font-family: "Press Start 2P", serif;
     --bg-color:#1F1F1F;
     --text-color:#EAEAEA;
+    --correct-number-color: #55AA3E;
+    --wrong-number-game: #ba181b;
+}
+body{
+    box-sizing: border-box;
+    margin: 0;
+    background-color: var(--bg-color);
 }
