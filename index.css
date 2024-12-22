@@ -10,4 +10,9 @@ body{
     margin: 0;
     background-color: var(--bg-color);
     font-family: var(--font-family);
+    color: var(--text-color);
+    text-align: center;
+}
+button{
+    font-family: var(--font-family);
 }
